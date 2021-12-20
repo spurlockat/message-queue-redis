@@ -2,9 +2,8 @@
 //        / \\\\\\\\
 //       / # \\\\\\\\
 //      ( * > )REDIS))
-//       \ O /HERMES/
+//       \ O /QUEUE//
 //        \_////////
-//
 
 import { Queue, Worker, QueueEvents, Job } from 'bullmq'
 import chalk from 'chalk'
@@ -52,15 +51,15 @@ queueEvents.on('failed', ({ jobId, failedReason }) => {
 async function JobGroupOne() {
   await Q.add('Job1', {
     test_payload_01: {
-      "name" : { "first" : "Billy", "last" : "Wells" },
+      "name" : { "first" : "Hendrix", "last" : "Jimmie" },
       "code" : "314000000X",
       "isPrimary" : true
     },
     test_payload_02: {
-      "name" : { "first" : "Freddy", "last" : "Fred" },
+      "name" : { "first" : "Bonk", "last" : "Donk" },
       "code" : "348000000X",
       "isPrimary" : false,
-      "desc" : "Facility"
+      "desc" : "Home"
     }
   })
 }
